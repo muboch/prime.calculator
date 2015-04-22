@@ -3,7 +3,7 @@ var primeApp = angular.module('primeApp', [ 'ngResource', 'ngRoute' ]);
 primeApp.config(function($routeProvider) {
 	$routeProvider.
 		// route for the home page
-		when('/', {
+		when('/home', {
 			templateUrl : 'home.html',
 			controller : 'mainController'
 	})
@@ -22,13 +22,12 @@ primeApp.config(function($routeProvider) {
 // create the controller and inject Angular's $scope
 primeApp.controller('mainController', function($scope) {
     // create a message to display in our view
-    $scope.message = 'Everyone come and see how good I look!';
 });
 
 primeApp.controller('perController', function($scope) {
-    $scope.message = 'Look! I am an about page.';
+
 });
 
 primeApp.controller('regleController', function($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
+	
 });

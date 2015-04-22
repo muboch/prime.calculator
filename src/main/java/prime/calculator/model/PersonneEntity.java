@@ -9,26 +9,27 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PERSONNELS")
-public class personne {
+public class PersonneEntity {
+  
 	@Id
 	@GeneratedValue
 	@Column(name="PER_PK")
-	private Integer id;
+	private Long id;
 	
 	@Column(name="NOM")
 	private String lastName;
 	
 	@Column(name="PRENOM")
-	private String fistName;
+	private String firstName;
 	
 	@Column(name="ADRESSE")
 	private String adresse;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -40,12 +41,12 @@ public class personne {
 		this.lastName = lastName;
 	}
 
-	public String getFistName() {
-		return fistName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFistName(String fistName) {
-		this.fistName = fistName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getAdresse() {
@@ -55,6 +56,4 @@ public class personne {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-
-	
 }

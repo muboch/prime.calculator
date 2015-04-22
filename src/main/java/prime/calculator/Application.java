@@ -31,10 +31,10 @@ public class Application {
   
   @Bean
   public DataSource createDataSource(){
-	  DataSourceBuilder factory = DataSourceBuilder.create().driverClassName("org.h2.Driver")//
-			  .url("jdbc:h2:mem:prime_mem")//
-			  .username("prime")//
-			  .password("prime");
+	  DataSourceBuilder factory = DataSourceBuilder.create().driverClassName("org.postgresql.Driver")//
+			  .url("jdbc:postgresql://localhost:5432/prime")//
+			  .username("postgres")//
+			  .password("postgres");
 	  return factory.build();
   }
 
