@@ -28,14 +28,14 @@ public class Application {
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
   }
-  
+
   @Bean
-  public DataSource createDataSource(){
-	  DataSourceBuilder factory = DataSourceBuilder.create().driverClassName("org.postgresql.Driver")//
-			  .url("jdbc:postgresql://localhost:5432/prime")//
-			  .username("postgres")//
-			  .password("postgres");
-	  return factory.build();
+  public DataSource createDataSource() {
+    DataSourceBuilder factory = DataSourceBuilder.create().driverClassName("org.postgresql.Driver")//
+        .url("jdbc:postgresql://localhost:5436/prime")//
+        .username("postgres")//
+        .password("admin");
+    return factory.build();
   }
 
 }
