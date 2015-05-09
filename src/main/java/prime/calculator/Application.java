@@ -31,11 +31,19 @@ public class Application {
 
   @Bean
   public DataSource createDataSource() {
-    DataSourceBuilder factory = DataSourceBuilder.create().driverClassName("org.postgresql.Driver")//
-        .url("jdbc:postgresql://localhost:5436/prime")//
-        .username("postgres")//
-        .password("admin");
+    DBProperties properties = new DBProperties();
+    DataSourceBuilder factory = DataSourceBuilder.create() //
+        .driverClassName(properties.getDriverClassName()) //
+        .url(properties.getUrl()) //
+        .username(properties.getUsername()) //
+        .password(properties.getPassword());
     return factory.build();
   }
+//    DataSourceBuilder factory = DataSourceBuilder.create().driverClassName("org.postgresql.Driver")//
+//        .url("jdbc:postgresql://localhost:5432/prime")//
+//        .username("postgres")//
+//        .password("postgres");
+//    return factory.build();
+//  }
 
 }

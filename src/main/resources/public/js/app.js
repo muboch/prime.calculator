@@ -24,9 +24,6 @@ primeApp.controller('mainController', function($scope) {
     // create a message to display in our view
 });
 
-primeApp.controller('perController', function($scope) {
-
-});
 
 primeApp.controller('regleController', function($scope) {
 	
