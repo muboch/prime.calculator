@@ -16,15 +16,17 @@
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="#home"> Primes App <small>Une
-                application pour caluculer les primes pour certaine Societ�</small>
+                application pour caluculer les primes pour certaine Societe</small>
             </a>
           </div>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="#personnel"><i class="fa fa-shield"></i>
+            <li><a href="#/login">login</a></li>
+            <li><a href="#/home"><i class="fa fa-home"></i> Home</a></li>
+            <li ng-show="authenticated"><a href="#/personnel"><i class="fa fa-shield"></i>
                 Personnels</a></li>
-            <li><a href="#regle"><i class="fa fa-comment"></i> Regles</a></li>
+            <li ng-show="authenticated"><a href="#regle"><i class="fa fa-comment"></i> Regles</a></li>
+            <li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
           </ul>
         </div>
       </nav>
