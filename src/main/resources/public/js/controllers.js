@@ -25,11 +25,11 @@ prime.controller('navigation', function($rootScope, $scope, $http, $location, $r
 
 				var headers = credentials ? {
 					authorization : "Basic "
-							+ btoa(credentials.username + ":"
-									+ credentials.password)
+							+ btoa(credentials.name + ":"
+									+ credentials.pw)
 				} : {};
 
-				$http.get('user', {
+				$http.get('http://localhost:8080/user', {
 					headers : headers
 				}).success(function(data) {
 					if (data.name) {
