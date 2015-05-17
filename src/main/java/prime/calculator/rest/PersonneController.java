@@ -19,14 +19,14 @@ public class PersonneController {
   @Autowired
   private UserService userService;
   
-  @RequestMapping(value = "/rest/prime/users", method = RequestMethod.GET,produces = {MediaType.APPLICATION_JSON_VALUE})
+  @RequestMapping(value = "/rest/prime/personnes", method = RequestMethod.GET,produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<?> getUser(){
-    List<PersonneEntity> users = userService.searchUsers();
+    List<PersonneEntity> users = userService.searchPersonnes();
     return ResponseEntity.ok(users);
   }
-  @RequestMapping(value = "/rest/prime/users", method = RequestMethod.POST,produces = {MediaType.APPLICATION_JSON_VALUE})
+  @RequestMapping(value = "/rest/prime/personnes", method = RequestMethod.POST,produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<?> createUser(@RequestBody PersonneEntity user){
-    PersonneEntity newUser = userService.createUser(user);
+    PersonneEntity newUser = userService.createPersonne(user);
     return ResponseEntity.ok(newUser);
   }
 

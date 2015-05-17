@@ -1,6 +1,6 @@
 var primeApp = angular.module('primeApp', [ 'ngResource', 'ngRoute' ]);
 
-primeApp.config(function($routeProvider) {
+primeApp.config(function($routeProvider, $httpProvider) {
 	$routeProvider.
 		// route for the home page
 		when('/home', {
@@ -9,12 +9,12 @@ primeApp.config(function($routeProvider) {
 	})
 		//route for personnel page
 		.when('/personnel', {
-			templateUrl : 'personnel.html',
+			templateUrl : 'views/personnel.html',
 			controller : 'perController'
 	})
 		//route for regle page
 		.when('/regle', {
-		templateUrl : 'regle.html',
+		templateUrl : 'views/regle.html',
 		controller : 'regleController'
 	})
 		// Login site
@@ -22,6 +22,8 @@ primeApp.config(function($routeProvider) {
 		templateUrl : 'login.html',
 		controller : 'navigation'
 	})
+	
+	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
-$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+

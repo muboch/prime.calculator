@@ -1,5 +1,6 @@
 <div class="jumbotron " ng-controller="perController">
 	<h1>About Personnel</h1>
+	Search: <input ng-model="query">
 	<div class="span6">
 		<table class="table table-hover">
 			<thead>
@@ -7,21 +8,18 @@
 					<th>#</th>
 					<th>First Name</th>
 					<th>Last Name</th>
-					<th>Username</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in users">
-					<td>{{ user.id }}</td>
-					<td>{{ user.firstName }}</td>
-					<td>{{ user.lastName }}</td>
-					<td><a ng-click="editUser(user.id)" class="btn btn-small btn-primary">edit</a></td>
-					<td><a ng-click="deleteUser(user.id)" class="btn btn-small btn-danger">delete</a></td>
+				<tr ng-repeat="per in personnes | filter:query">
+					<td>{{ per.id }}</td>
+					<td>{{ per.firstName }}</td>
+					<td>{{ per.lastName }}</td>
+					<td><a ng-click="editUser(per.id)" class="btn btn-small btn-primary">edit</a></td>
+					<td><a ng-click="deleteUser(per.id)" class="btn btn-small btn-danger">delete</a></td>
 				</tr>
 			</tbody>
 		</table>
 		<a ng-click="createNewUser()" class="btn btn-default">create new user</a>
 	</div>
-
-	<p>{{ message }}</p>
 </div>

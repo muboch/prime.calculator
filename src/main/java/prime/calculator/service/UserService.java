@@ -15,18 +15,18 @@ public class UserService {
   @Autowired
   private PersonneEntityRepository personneRepo;
   
-  public List<PersonneEntity> searchUsers(){
+  public List<PersonneEntity> searchPersonnes(){
     List<PersonneEntity> allPer = personneRepo.findAll();
     return allPer;
   }
   
-  public PersonneEntity createUser(PersonneEntity user){
+  public PersonneEntity createPersonne(PersonneEntity per){
     PersonneEntity newUser = new PersonneEntity();
-    newUser.setFirstName(user.getFirstName());
-    newUser.setLastName(user.getLastName());
-    newUser.setAdresse(user.getAdresse());
+    newUser.setFirstName(per.getFirstName());
+    newUser.setLastName(per.getLastName());
+    newUser.setAdresse(per.getAdresse());
     personneRepo.save(newUser);
-    return user ;
+    return per ;
   }
 
 }

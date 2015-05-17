@@ -14,7 +14,7 @@ public class DBProperties {
     try {
       username = "postgres";
       password = "postgres";
-      url = "jdbc:postgresql://localhost/postgres";
+      url = "jdbc:postgresql://localhost/prime";
       String dbProperty = System.getenv("DATABASE_URL");
       if (dbProperty != null) {
         dbUri = new URI(dbProperty);

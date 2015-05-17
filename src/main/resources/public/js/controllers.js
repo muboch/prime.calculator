@@ -1,9 +1,12 @@
-primeApp.controller('perController', function($scope, $http) {
-    $http.get("http://localhost:8080/rest/prime/users")
-    .success(function (response) {
-            $scope.users = response;
-        });
-});
+primeApp.controller('perController', ['$scope', 'allPersonels', function($scope, allPersonels) {
+		// Instantiate an object to store your scope data in (Best Practices)
+		//$scope.data = {};
+
+	allPersonels.query(function(response) {
+			// Assign the response INSIDE the callback
+			$scope.personnes = response;
+		});
+	}]);
 
 //create the controller and inject Angular's $scope
 primeApp.controller('mainController', function($scope) {
@@ -15,7 +18,7 @@ primeApp.controller('regleController', function($scope) {
 	
 });
 
-prime.controller('navigation', function($rootScope, $scope, $http, $location, $route) {
+primeApp.controller('navigation', function($rootScope, $scope, $http, $location, $route) {
 
 			$scope.tab = function(route) {
 				return $route.current && route === $route.current.controller;
@@ -29,7 +32,7 @@ prime.controller('navigation', function($rootScope, $scope, $http, $location, $r
 									+ credentials.pw)
 				} : {};
 
-				$http.get('http://localhost:8080/user', {
+				$http.get('user', {
 					headers : headers
 				}).success(function(data) {
 					if (data.name) {
