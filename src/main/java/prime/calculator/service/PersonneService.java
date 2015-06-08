@@ -10,7 +10,7 @@ import prime.calculator.model.PersonneEntityRepository;
 
 
 @Component
-public class UserService {
+public class PersonneService {
   
   @Autowired
   private PersonneEntityRepository personneRepo;

@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import prime.calculator.model.PersonneEntity;
-import prime.calculator.service.UserService;
+import prime.calculator.service.PersonneService;
 
 @RestController
 public class PersonneController {
   
   @Autowired
-  private UserService userService;
+  private PersonneService userService;
   
   @RequestMapping(value = "/rest/prime/personnes", method = RequestMethod.GET,produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<?> getUser(){
