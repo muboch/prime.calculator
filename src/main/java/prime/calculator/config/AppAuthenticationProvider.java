@@ -32,7 +32,6 @@ public class AppAuthenticationProvider implements AuthenticationProvider {
           return new UsernamePasswordAuthenticationToken(username, "password", null);
         }
 
-        // TODO [security] (poc) I really don't like this. Security recommendations are not to tell
         // the client whether the username or password was wrong.
         throw new BadCredentialsException("Wrong password");
       }

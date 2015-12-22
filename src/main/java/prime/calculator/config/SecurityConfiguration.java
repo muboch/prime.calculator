@@ -54,14 +54,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     http.authorizeRequests().antMatchers("/images/**", "/js/**", "/styles/**","/webjars/**").permitAll();
     http.authorizeRequests().antMatchers("/", "/index.html", "/views/login.html").permitAll();
     http.authorizeRequests().anyRequest().authenticated();
-
-    // TODO check if there is a way to use "grunt serve" with csrf tokens
-    if (WORKS_WITH_GRUNT_SERVE) {
-      http.csrf().disable();
-    } else {
-      http.csrf().csrfTokenRepository(csrfTokenRepository());
-      http.addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
-    }
+ 
+    http.csrf().csrfTokenRepository(csrfTokenRepository());
+    http.addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
 
     http.addFilterBefore(accessDeniedInterceptor(), FilterSecurityInterceptor.class);
   }
